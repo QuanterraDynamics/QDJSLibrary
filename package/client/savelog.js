@@ -19,8 +19,7 @@ function embedStyles(user, name, content, style) {
 }
 
 async function savelog(client, input, content, { name, type, channel, style }) {
-    let user;
-    if (input.isCommand) { user = input.member; } else if (input.content) { user = input.author; }
+    let user; if (input.member) user = input.member; else if (input.author) user = input.author;
     const guild = client.guilds.cache.get(logServer)
     if(guild) {
         if(channel) {
