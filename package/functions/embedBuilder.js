@@ -6,7 +6,11 @@ function userHasOwnerRights(message, { boolean, reply, replyType }) {
     .setDescription(isOwner ? `You have the **owner** permissions of the guild.` : `You don't have the **owner** permissions of the guild.`)
     .setColor(isOwner ? `#5cf17e` : `#FF5733`);
 
-    return reply === true ? message.reply({ embeds: [embed], ephemeral: false }) : message.channel.send({ embeds: [embed], ephemeral: false });
+    if(reply === true) {
+        return replyType === "reply" ? message.reply({ embeds: [embed], ephemeral: false }) : message.channel.send({ embeds: [embed], ephemeral: false });
+    } else {
+        return embed
+    }
 }
 
 module.exports = { userHasOwnerRights }

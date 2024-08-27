@@ -11,7 +11,7 @@ client.on("messageCreate", async message => {
     let prefix = ""
 
     if(message.content.startsWith(prefix+"pc")) {
-        return qdjs.server.permissionsChecker(message, { type: "owner", response: "card", reply: true })
+        return qdjs.server.permissionsChecker(message, { type: "owner", response: "card", reply: true, replyType: "reply" })
     }
 })
 
