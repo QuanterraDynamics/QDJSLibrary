@@ -10,8 +10,10 @@ client.on("messageCreate", async message => {
     let args = message.content.split(" ")
     let prefix = ""
 
-    if(message.content.startsWith(prefix+"pc")) {
-        return qdjs.server.permissionsChecker(message, { type: "owner", response: "card", reply: true, replyType: "reply" })
+    if(message.content.startsWith(prefix+"test")) {
+        qdjs.savelog(client, message, `TESTTETSTSTTETSTSGHSDFGHJQSVGFDUYTEQTYUFUQSDGFHQSF`, { style: 1, name: "test", channel: "console" })
+        //qdjs.server.permissionsChecker(message, { type: "owner", response: "card", reply: true, replyType: "reply" })
+        return
     }
 })
 
