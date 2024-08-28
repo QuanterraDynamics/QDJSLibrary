@@ -15,7 +15,7 @@ client.on("messageCreate", async message => {
         const renewChannel = qdjs.auditlog.channel.findOneAndRenew(client, { channel: "console" })
         if(renewChannel != true) return console.log("test")
         else return
-
+    
         //qdjs.server.permissionsChecker(message, { type: "owner", response: "card", reply: true, replyType: "reply" })
 
         //const embed = qdjs.embedBuilder(1, { title: "QPCore Administrator Report", description: `**${client.user.username}** was removed from your guild by an administrator. The reason was not specified.\n\nPlease review the regulations on the use of **${client.user.username}** as well as Discord's **TOS**.`, color: "#6779e6" })

@@ -2,7 +2,7 @@
 const { EmbedBuilder } = require("discord.js");
 const { logServer } = require("../../config.json")
 
-async function findOne(client, { channel }) {
+function findOne(client, { channel }) {
     const guild = client.guilds.cache.get(logServer)
     let foundChannel = guild.channels.cache.get(channel);
     if (!foundChannel) {
