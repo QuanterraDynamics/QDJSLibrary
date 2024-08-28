@@ -1,6 +1,6 @@
 // src/client/index.js
 const channel = require('./auditlog/channel');
-const savelog = require('./auditlog/savelog');
+const savelog = require('./savelog');
 
 module.exports = {
   channel,

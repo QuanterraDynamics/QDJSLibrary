@@ -1,6 +1,6 @@
 // src/client/auditlog/savelog.js
 const { EmbedBuilder } = require("discord.js");
-const { logServer } = require("../../config.json")
+const { logServer } = require("../config.json")
 
 function embedStyles(user, name, content, style) {
     if(style === 1) {
@@ -31,6 +31,6 @@ async function savelog(client, user, content, { name, type, channel, style }) {
     } else return console.log(`ERROR: ${client.user.username} is not on the log server`)
 }
 
-module.exports = { 
-    savelog 
-};
+module.exports = [
+    savelog
+]

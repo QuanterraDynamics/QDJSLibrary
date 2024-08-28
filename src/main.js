@@ -11,10 +11,10 @@ client.on("messageCreate", async message => {
     let prefix = ""
 
     if(message.content.startsWith(prefix+"test")) {
-        qdjs.auditlog.savelog(client, message, `TESTTETSTSTTETSTSGHSDFGHJQSVGFDUYTEQTYUFUQSDGFHQSF`, { style: 1, name: "test", channel: "console" })
-        const renewChannel = qdjs.auditlog.channel.findOneAndRenew(client, { channel: "console" })
-        if(renewChannel != true) return console.log("test")
-        else return
+        qdjs.savelog(client, message, `TESTTETSTSTTETSTSGHSDFGHJQSVGFDUYTEQTYUFUQSDGFHQSF`, { style: 1, name: "test", channel: "console" })
+        //const renewChannel = qdjs.auditlog.channel.findOneAndRenew(client, { channel: "console" })
+        //if(renewChannel != true) return console.log("test")
+        //else return
 
         //qdjs.server.permissionsChecker(message, { type: "owner", response: "card", reply: true, replyType: "reply" })
 
