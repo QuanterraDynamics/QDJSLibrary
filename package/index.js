@@ -1,10 +1,8 @@
 // src/index.js
-//const server = require('./server');
 const embedBuilder = require('./client/embedBuilder');
-const savelog = require('./client/savelog');
+const auditlog = require('./client/index');
 
 module.exports = {
-  //server,
   embedBuilder,
-  savelog
+  auditlog
 };
