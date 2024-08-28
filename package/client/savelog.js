@@ -27,7 +27,7 @@ async function savelog(client, input, content, { name, type, channel, style }) {
             if(foundChannel) {
                 const embed = embedStyles(user, name, content, style);
                 return foundChannel.send({ embeds: [embed], ephemeral: false })
-            } else return console.log(`ERROR: channel nammed ${channel} not found on log server`)
+            } else return console.log(`ERROR: channel named ${channel} not found on log server`)
         } else return
     } else return console.log(`ERROR: bot is not on the log server`)
 }
