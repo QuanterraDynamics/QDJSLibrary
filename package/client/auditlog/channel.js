@@ -1,4 +1,4 @@
-// src/client/savelog.js
+// src/client/auditlog/channel.js
 const { EmbedBuilder } = require("discord.js");
 const { logServer } = require("../../config.json")
 
