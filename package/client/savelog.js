@@ -6,7 +6,7 @@ function embedStyles(user, name, content, style) {
     if(style === 1) {
         const userAvatar = user.displayAvatarURL({ dynamic: true, size: 1024 });
         const embed = new EmbedBuilder()
-        .setAuthor({ name: `${user.username} created an audit log event`, iconURL: userAvatar })
+        .setAuthor({ name: `${user.user.username} created an audit log event`, iconURL: userAvatar })
         .setTitle(`Event: \`${name}\``)
         .setDescription(`${content}`)
         .setColor(`F0E68C`)
@@ -18,8 +18,7 @@ function embedStyles(user, name, content, style) {
     else return
 }
 
-async function savelog(client, input, content, { name, type, channel, style }) {
-    let user; if (input.member) user = input.member; else if (input.author) user = input.author;
+async function savelog(client, user, content, { name, type, channel, style }) {
     const guild = client.guilds.cache.get(logServer)
     if(guild) {
         if(channel) {
@@ -29,7 +28,7 @@ async function savelog(client, input, content, { name, type, channel, style }) {
                 return foundChannel.send({ embeds: [embed], ephemeral: false })
             } else return console.log(`ERROR: channel named ${channel} not found on log server`)
         } else return
-    } else return console.log(`ERROR: bot is not on the log server`)
+    } else return console.log(`ERROR: ${client.user.username} is not on the log server`)
 }
 
 module.exports = savelog;
