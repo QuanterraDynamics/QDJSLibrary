@@ -1,12 +1,12 @@
 // src/client/auditlog/savelog.js
 const { EmbedBuilder } = require("discord.js");
-const { logServer } = require("../config.json")
+const { logServer } = require("../../config.json")
 
 function embedStyles(user, name, content, style) {
     if(style === 1) {
         const userAvatar = user.displayAvatarURL({ dynamic: true, size: 1024 });
         const embed = new EmbedBuilder()
-        .setAuthor({ name: `${user.user.username} created an audit log event`, iconURL: userAvatar })
+        .setAuthor({ name: `${user.username} created an audit log event`, iconURL: userAvatar })
         .setTitle(`Event: \`${name}\``)
         .setDescription(`${content}`)
         .setColor(`F0E68C`)
@@ -31,6 +31,4 @@ async function savelog(client, user, content, { name, type, channel, style }) {
     } else return console.log(`ERROR: ${client.user.username} is not on the log server`)
 }
 
-module.exports = [
-    savelog
-]
+module.exports = savelog

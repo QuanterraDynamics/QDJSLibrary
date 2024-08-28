@@ -38,7 +38,4 @@ async function findOneAndRenew(client, { channel }) {
     } else return false
 }
 
-module.exports = [
-    findOne,
-    findOneAndRenew
-]
+module.exports = { findOne, findOneAndRenew }
